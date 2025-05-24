@@ -196,5 +196,82 @@ print_matrix(A)
 
 
 ### Result: Thus, the given program is implemented and executed successfully.
- 
+
+ ### EX: 9.4 Insertion sort algorithm
+
+### Aim: 
+
+To Write a Python class to perform Insertion sort algorithm with three functions:
+
+(i)Create list
+(ii) Insertion sort
+(iii) print list
+
+
+### Algorithm:
+
+1. Start
+2. Define a class `InsertionSort` with:
+    a. A constructor to initialize an empty list
+    b. `create_list(n)` method to take n integer inputs and store in the list
+    c. `insertion_sort()` method to sort the list using insertion sort logic:
+       - For i from 1 to length of list - 1:
+         i.   Store the current element as key
+         ii.  Compare key with previous elements and shift them if larger
+         iii. Insert key at correct position
+    d. `print_list()` method to display the elements of the list
+ 3. Create an object of the class
+ 4. Input number of elements
+ 5. Call `create_list(n)` to read the list
+ 6. Print the list before sorting
+ 7. Call `insertion_sort()` to sort the list
+ 8. Print the list after sorting
+ 9. End
+
+
+### Program:
+
+```python
+# Name: Nidhish B
+# Reg no: 212223050032
+
+class InsertionSort:
+    def __init__(self):
+        self.lst = []
+
+    def create_list(self, n):
+        self.lst = [int(input()) for _ in range(n)]
+
+    def insertion_sort(self):
+        for i in range(1, len(self.lst)):
+            key = self.lst[i]
+            j = i - 1
+            while j >= 0 and self.lst[j] > key:
+                self.lst[j + 1] = self.lst[j]
+                j -= 1
+            self.lst[j + 1] = key
+
+    def print_list(self):
+        for item in self.lst:
+            print(item)
+
+n = int(input())
+sorter = InsertionSort()
+sorter.create_list(n)
+
+print("Before Sorting")
+sorter.print_list()
+
+sorter.insertion_sort()
+
+print("After Sorting")
+sorter.print_list()
+
+```
+### Output:
+
+![image](https://github.com/user-attachments/assets/d72893e3-3b2a-403b-ae2a-dc79bf10f026)
+
+
+### Result: Thus, the given program is implemented and executed successfully.
 
